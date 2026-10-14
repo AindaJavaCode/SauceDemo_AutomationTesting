@@ -6,6 +6,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import io.qameta.allure.Allure;
+import java.io.ByteArrayInputStream;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -30,6 +32,7 @@ public class ScreenshotOnFailure implements TestExecutionExceptionHandler {
             Path file = dir.resolve(fileName);
 
             Files.write(file, png);
+            Allure.attachment("Screenshot on failure", new ByteArrayInputStream(png));
             log.error("Test failed. Screenshot saved to {}", file.toAbsolutePath());
         } catch (Exception e) {
             log.warn("Could not capture screenshot", e);

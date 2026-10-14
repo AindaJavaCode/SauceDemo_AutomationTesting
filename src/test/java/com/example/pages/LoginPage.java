@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import io.qameta.allure.Allure;
 
 public class LoginPage {
 
@@ -44,8 +45,11 @@ public class LoginPage {
     }
 
     private void submit(String username, String password) {
-        driver.findElement(usernameField).sendKeys(username);
-        driver.findElement(passwordField).sendKeys(password);
-        driver.findElement(loginButton).click();
+        log.info("Logging in as '{}'", username);
+        Allure.step("Log in as " + username, () -> {
+            driver.findElement(usernameField).sendKeys(username);
+            driver.findElement(passwordField).sendKeys(password);
+            driver.findElement(loginButton).click();
+        });
     }
 }

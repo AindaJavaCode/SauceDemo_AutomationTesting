@@ -8,14 +8,21 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import io.github.cdimascio.dotenv.Dotenv;
 import org.junit.jupiter.api.Test;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import org.junit.jupiter.api.DisplayName;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Feature("Login")
 class LoginTest extends BaseTest {
 
     private static final Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
 
     @Test
+    @DisplayName("A valid user can log in")
+    @Severity(SeverityLevel.CRITICAL)
     void validUserCanLogIn() {
         String username = dotenv.get("SAUCEDEMO_USERNAME");
         String password = dotenv.get("SAUCEDEMO_PASSWORD");
