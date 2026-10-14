@@ -1,3 +1,1 @@
-# SauceDemo_AutomationTesting
-Functional automation testing of https://www.saucedemo.com/
-Code is held in the master branch
+**CODE FOR THIS PROJECT IS HELD IN THE MASTER BRANCH**
