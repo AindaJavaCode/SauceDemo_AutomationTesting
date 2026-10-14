@@ -8,7 +8,7 @@ Designed and built an end-to-end UI test automation framework for an e-commerce 
 - Covered login, negative and parameterised scenarios, and cart workflows, using explicit waits and fully independent tests to keep results reliable
 - Added structured logging (SLF4J/Logback), automatic screenshots on failure, and Allure reporting with steps and attachments
 - **Set up a GitHub Actions pipeline that runs the suite headless on every push and pull request, uploads artifacts, and publishes the Allure report to GitHub Pages**
-- **PLEASE SEE github-pages**
-- 
+- **PLEASE SEE github-pages ->**
+
 Tech: Java, Selenium WebDriver, JUnit 6, Maven, Allure, GitHub Actions, GitHub Pages, Logback
 
