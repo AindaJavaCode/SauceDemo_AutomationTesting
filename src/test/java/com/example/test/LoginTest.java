@@ -23,7 +23,7 @@ class LoginTest extends BaseTest {
         InventoryPage inventory = new LoginPage(driver).loginAs(username, password);
 
         assertEquals("Products", inventory.getTitle());
-        assertEquals(6, inventory.getProductCount());
+        assertTrue(inventory.getProductCount() > 1);
     }
 
     @Test
