@@ -15,7 +15,7 @@ concurrency:                  # a newer push cancels an older run on the same br
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 20
     env:
       SAUCEDEMO_USERNAME: ${{ secrets.SAUCEDEMO_USERNAME }}
@@ -65,7 +65,7 @@ jobs:
   deploy-report:
     needs: test
     if: ${{ !cancelled() && github.ref == 'refs/heads/master' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     permissions:
       pages: write
       id-token: write
