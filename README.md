@@ -10,5 +10,4 @@ Designed and built an end-to-end UI test automation framework for an e-commerce 
 - Set up a GitHub Actions pipeline that runs the suite headless on every push and pull request, uploads artifacts, and publishes the Allure report to GitHub Pages
 
 Tech: Java, Selenium WebDriver, JUnit 6, Maven, Allure, GitHub Actions, GitHub Pages, Logback
-Repo: [link]  |  Live report: [link]
 
