@@ -43,7 +43,7 @@ public class InventoryPage {
 
     public int getCartCount() {
         List<WebElement> badges = driver.findElements(cartBadge);
-        return badges.isEmpty() ? 0 : Integer.parseInt(badges.getFirst().getText());
+        return badges.isEmpty() ? 0 : Integer.parseInt(badges.get(0).getText());
     }
 
     public void addAllProductsToCart() {
@@ -51,7 +51,7 @@ public class InventoryPage {
 
         for (int i = 1; i <= total; i++) {
             // re-find every time, so we never hold a stale reference
-            driver.findElements(addToCartButtons).getFirst().click();
+            driver.findElements(addToCartButtons).get(0).click();
             wait.until(ExpectedConditions.textToBe(cartBadge, String.valueOf(i)));
         }
     }
@@ -60,7 +60,7 @@ public class InventoryPage {
         int total = driver.findElements(removeFromCartButtons).size();
 
         for(int i = 1; i <= total; i++){
-            driver.findElements(removeFromCartButtons).getFirst().click();
+            driver.findElements(removeFromCartButtons).get(0).click();
             if (!driver.findElements(removeFromCartButtons).isEmpty()){
                 wait.until(ExpectedConditions.textToBe(cartBadge, String.valueOf(total - i)));
             }
