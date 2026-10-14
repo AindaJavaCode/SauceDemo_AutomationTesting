@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class LoginTest extends BaseTest {
 
-    private static final Dotenv dotenv = Dotenv.load();
+    private static final Dotenv dotenv = Dotenv.configure().ignoreIfMissing().load();
 
     @Test
     void validUserCanLogIn() {
