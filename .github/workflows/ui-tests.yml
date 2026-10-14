@@ -43,7 +43,7 @@ jobs:
 
       - name: Generate Allure report
         if: ${{ !cancelled() }}
-        run: npx --yes allure generate target/allure-results --clean -o allure-report
+        run: npx --yes allure generate target/allure-results -o allure-report
 
       - name: Upload raw results, screenshots and logs
         if: ${{ !cancelled() }}
